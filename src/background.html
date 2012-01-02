@@ -1,0 +1,34 @@
+<html>
+  <script>
+    //React when a browser action's icon is clicked.
+  /*
+chrome.browserAction.onClicked.addListener(function(tab) {
+  chrome.tabs.executeScript(null, {file: 'md5.js'});
+  chrome.tabs.executeScript(null, {file: 'content_script.js'});
+});
+*/
+
+chrome.extension.onRequest.addListener(
+  function(request, sender, sendResponse) {
+    console.log(sender.tab ?
+                "from a content script:" + sender.tab.url :
+                "from the extension");
+    if (request.action == "getFilters") {
+        var filters = [],
+        str = localStorage['fanfou-timeline-filter'];
+        if (str) {
+            filters = JSON.parse(str);
+        }
+        sendResponse({filters: filters});
+    } else {
+        sendResponse({}); // snub them.
+    }
+  });
+
+
+
+  </script>
+
+  <div id="box"></div>
+</html>
+

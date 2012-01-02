@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fanfou fitler Options</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="options.js"></script>
+    <style>
+#wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+table {  border-spacing: 0; }
+#playground {
+    padding: 10px;
+}
+
+.button {
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px;
+  margin: 10px 5px;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0px 1px 2px #666666;
+  text-shadow: 1px 1px 0px #9a179c;
+  border: solid #ffffff 2px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#e963f0), to(#9a179c));
+ 
+}
+.button:hover {
+  background: #9a179c;
+}
+
+
+#fitler-list {
+    border: solid #ccc 1px;
+    border-radius: 6px;
+    box-shadow: 0 1px 1px #ccc;
+    margin: 10px;
+}
+#fitler-list th:first-child {
+    border-radius: 6px 0 0 0;
+}
+#fitler-list td:first-child {
+    border-radius: 0 0 0 6px;
+}
+#fitler-list td:last-child {
+    border-radius: 0 0 6px 0;
+}
+#fitler-list tr:nth-child(even) {
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+}
+#fitler-list tr {
+    transition: all 0.1s ease-in-out;
+}
+#fitler-list th {
+    background-color: #dce9f9;
+    background-image: linear-gradient(top, #ebf3fc, #dce9f9);
+}
+#fitler-list td,
+#fitler-list th {
+    padding: 10px 20px;
+}
+#fitler-list {}
+#fitler-list {}
+#notice {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: yellow;
+    width: 100px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+<div id="wrapper">
+
+<h1>饭否过滤器</h1>
+<div id="playground">
+    <a href="#" id="addFilter" class="button">新建</a>
+    <a id="save-btn" class="button" href="#">保存</a>
+    <br /> <br />
+    <table id="fitler-list">
+        <tbody>
+        <tr class="list-header">
+            <th>区域</th>
+            <th>类型</th>
+            <th>关键词</th>
+            <th>&nbsp;</th>
+        </tr>
+        <!--tr>
+            <td><select class="source"><option>来源</option><option>作者</option><option>内容</option></select></td>
+            <td><select class="type"><option>包含</option><option>不包含</option></select></td>
+            <td><input class="keyword" type="text" value="按时吃饭" /></td>
+            <td><a class="del-btn" href="#">Delete</a></td>
+        </tr-->
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+</div>
+<div id="notice"></div>
+
+
+</div>
+</body>
+</html>
